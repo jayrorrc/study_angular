@@ -12,6 +12,7 @@ import { PhotoListModule } from './photo-list/photo-list.module';
         PhotoModule,
         PhotoFormModule,
         PhotoListModule,
+        
         CommonModule
     ],
 })
