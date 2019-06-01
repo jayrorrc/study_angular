@@ -8,7 +8,10 @@ import { PhotoService } from '../../photo/photo.service';
 
 @Component({
     selector: 'app-photo-comments',
-    templateUrl: './photo-comments.component.html'
+    templateUrl: './photo-comments.component.html',
+    styleUrls: [
+        './photo-comments.css'
+    ]
 })
 export class PhotoCommentsComponent implements OnInit {
 
