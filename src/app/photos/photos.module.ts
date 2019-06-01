@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { PhotoModule } from './photo/photo.module';
 import { PhotoFormModule } from './photo-form/photo-form.module';
 import { PhotoListModule } from './photo-list/photo-list.module';
+import { PhotoDetailsModule } from './photo-details/photo-details.module';
 
 @NgModule({
     exports: [],
@@ -14,7 +15,8 @@ import { PhotoListModule } from './photo-list/photo-list.module';
         PhotoFormModule,
         PhotoListModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        PhotoDetailsModule
     ],
 })
 export class PhotosModule {}
