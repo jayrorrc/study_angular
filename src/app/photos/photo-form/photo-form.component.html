@@ -4,8 +4,11 @@
         <div
           class="form-group"
           *ngIf="!preview; else showPreview">
-            <button type="button" (click)="fileInput.click()" class="btn btn-primary">
-                <em class="fa fa-image fa-4x align-middle"></em>
+            <button appImediateClick
+                type="button"
+                (click)="fileInput.click()"
+                class="btn btn-primary">
+                  <em class="fa fa-image fa-4x align-middle"></em>
             </button>
             <input
               #fileInput
