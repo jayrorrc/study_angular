@@ -9,7 +9,10 @@
                 <p class="text-left break-word">
                     {{photo.description}}
                 </p>
-                <hr>
+                <div class="text-left mb-4">
+                    <em class="fa fa-comment-o fa-2x mr-2 ml-2"></em>{{ photo.comments }}
+                    <em (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></em>
+                </div>
             </small>
 
             <app-photo-comments
