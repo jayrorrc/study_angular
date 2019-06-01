@@ -15,19 +15,16 @@ import { PhotoComments } from '../photo/photo-comments';
 export class PhotoDetailsComponent implements OnInit {
 
     photo$: Observable<Photo>;
-    photoComments$: Observable<PhotoComments[]>;
+    photoId: number;
 
     constructor(
         private route: ActivatedRoute,
         private photoService: PhotoService) {}
 
     ngOnInit(): void {
-        const photoId = this.route.snapshot.params.photoId;
+        this.photoId = this.route.snapshot.params.photoId;
 
         this.photo$ = this.photoService
-            .findById(photoId);
-
-        this.photoComments$ = this.photoService
-            .getComments(photoId);
+            .findById(this.photoId);
     }
 }
