@@ -11,5 +11,4 @@ export class PhotoFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
