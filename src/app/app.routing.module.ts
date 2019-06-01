@@ -8,6 +8,15 @@ import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
+    {
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
+    },
+    {
         path: 'user/:userName',
         component: PhotoListComponent,
         resolve: {
@@ -26,7 +35,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, { useHash: true })
     ],
     exports: [
         RouterModule
