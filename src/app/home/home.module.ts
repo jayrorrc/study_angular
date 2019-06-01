@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignInComponent } from './signin/signin.component';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
         CommonModule,
         ReactiveFormsModule,
         VMessageModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule
     ]
 })
 export class HomeModule { }
