@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { PhotoFormComponent } from './photo-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VMessageModule } from 'src/app/shared/components/vmessage/vmessage.module';
+
+import { PhotoFormComponent } from './photo-form.component';
+import { PhotoModule } from '../photo/photo.module';
+import { ImediateClickModule } from 'src/app/shared/directives/imediate-click/imediate-click.module';
 
 @NgModule({
     declarations: [
@@ -12,7 +14,9 @@ import { VMessageModule } from 'src/app/shared/components/vmessage/vmessage.modu
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        VMessageModule
+        VMessageModule,
+        PhotoModule,
+        ImediateClickModule
     ]
 })
 export class PhotoFormModule { }
