@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SignUpComponent } from './signup/signup.component';
 import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home.routing.module';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home.component';
         ReactiveFormsModule,
         VMessageModule,
         HttpClientModule,
-        RouterModule
+        RouterModule,
+        HomeRoutingModule
     ]
 })
 export class HomeModule { }
