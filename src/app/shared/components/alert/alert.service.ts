@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Alert, AlertType } from './alert';
+import { Router, NavigationStart } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -8,28 +9,47 @@ import { Alert, AlertType } from './alert';
 export class AlertService {
 
     alertSubject: Subject<Alert> = new Subject<Alert>();
+    keepAfterRouteChange = false;
 
-    private alert(alertType: AlertType, message: string) {
+    constructor(router: Router) {
+        router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                if (this.keepAfterRouteChange) {
+                    this.keepAfterRouteChange = false;
+                } else {
+                    this.clear();
+                }
+            }
+        });
+    }
+
+    private alert(alertType: AlertType, message: string, keepAfterRouteChange: boolean) {
+        this.keepAfterRouteChange = keepAfterRouteChange;
+
         this.alertSubject.next(new Alert(alertType, message));
     }
 
-    success(message: string) {
-        this.alert(AlertType.SUCCESS, message);
+    success(message: string, keepAfterRouteChange: boolean = false) {
+        this.alert(AlertType.SUCCESS, message, keepAfterRouteChange);
     }
 
-    info(message: string) {
-        this.alert(AlertType.INFO, message);
+    info(message: string, keepAfterRouteChange: boolean = false) {
+        this.alert(AlertType.INFO, message, keepAfterRouteChange);
     }
 
-    warnig(message: string) {
-        this.alert(AlertType.WARNING, message);
+    warnig(message: string, keepAfterRouteChange: boolean = false) {
+        this.alert(AlertType.WARNING, message, keepAfterRouteChange);
     }
 
-    danger(message: string) {
-        this.alert(AlertType.DANGER, message);
+    danger(message: string, keepAfterRouteChange: boolean = false) {
+        this.alert(AlertType.DANGER, message, keepAfterRouteChange);
     }
 
     getAlert() {
         return this.alertSubject.asObservable();
+    }
+
+    clear() {
+        this.alertSubject.next(null);
     }
 }
