@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PhotoDetailsComponet } from './photo-details.component';
+import { PhotoDetailsComponent } from './photo-details.component';
 
 @NgModule({
     declarations: [
-        PhotoDetailsComponet
+        PhotoDetailsComponent
     ],
     exports: [
-        PhotoDetailsComponet
+        PhotoDetailsComponent
     ],
     imports: [
         CommonModule
