@@ -10,8 +10,15 @@
                     {{photo.description}}
                 </p>
                 <div class="text-left mb-4">
-                    <em class="fa fa-comment-o fa-2x mr-2 ml-2"></em>{{ photo.comments }}
-                    <em (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></em>
+                    <em class="fa fa-comment-o fa-2x mr-2 ml-2">
+                    </em>
+
+                    {{ photo.comments }}
+
+                    <em  appPhotoOwnerOnly [ownedPhoto]="photo"
+                        (click)="remove()"
+                        class="fa fa-trash-o fa-2x pull-right">
+                    </em>
                 </div>
             </small>
 
