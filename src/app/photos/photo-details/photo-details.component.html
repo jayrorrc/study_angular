@@ -10,10 +10,13 @@
                     {{photo.description}}
                 </p>
                 <div class="text-left mb-4">
-                    <em class="fa fa-comment-o fa-2x mr-2 ml-2">
+                    <em (click)="like(photo)" appShowIfLogged class="fa fa-heart-o fa-2x mr-2 pull-left">
+                        {{ photo.likes }}
                     </em>
 
-                    {{ photo.comments }}
+                    <em class="fa fa-comment-o fa-2x mr-2 ml-2">
+                        {{ photo.comments }}
+                    </em>
 
                     <em  appPhotoOwnerOnly [ownedPhoto]="photo"
                         (click)="remove()"
