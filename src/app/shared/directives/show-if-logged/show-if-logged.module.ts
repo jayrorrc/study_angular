@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
+import { ShowIfLoggedDirective } from './show-if-logged.directive';
 import { CommonModule } from '@angular/common';
-
-import { DarkenOnHoverDirective } from './darken-on-hover.directive';
 
 @NgModule({
     declarations: [
-        DarkenOnHoverDirective
+        ShowIfLoggedDirective
     ],
     exports: [
-        DarkenOnHoverDirective
+        ShowIfLoggedDirective
     ],
     imports: [
         CommonModule
     ]
 })
-export class DarkenOnHoverModule { }
+export class ShowIfLoggedModule {
+
+}

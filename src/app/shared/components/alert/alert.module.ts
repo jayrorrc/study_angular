@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DarkenOnHoverDirective } from './darken-on-hover.directive';
+import { AlertComponent } from './alert.component';
 
 @NgModule({
     declarations: [
-        DarkenOnHoverDirective
+        AlertComponent
     ],
     exports: [
-        DarkenOnHoverDirective
+        AlertComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class DarkenOnHoverModule { }
+export class AlertModule {
+
+}
