@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-loading',
     templateUrl: './loading.component.html',
     styleUrls: [
-        './loading.component.ts'
+        'loading.component.css'
     ]
 })
 export class LoadingComponent implements OnInit {
