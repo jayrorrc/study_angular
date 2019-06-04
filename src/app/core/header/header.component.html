@@ -1,11 +1,16 @@
 <header>
     <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand">ALURAPIC</a>
+        <a class="navbar-brand">
+            <em (click)="menu.toggle()" class="fa fa-bars mr-2"></em>
+            ALURAPIC
+        </a>
+
+        <app-menu #menu></app-menu>
 
         <div *ngIf="(user$ | async) as user; else login">
-        <em class="fa fa-user-circle mr-1"></em>
-        <a class="mr-1">{{user.name}}</a>
-        <a (click)="logout()">(Logout)</a>
+            <em class="fa fa-user-circle mr-1"></em>
+            <a class="mr-1">{{user.name}}</a>
+            <a (click)="logout()">(Logout)</a>
         </div>
 
         <ng-template #login>
